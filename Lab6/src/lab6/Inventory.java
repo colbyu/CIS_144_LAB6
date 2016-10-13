@@ -3,6 +3,8 @@ import java.util.Scanner;
 //Colby Underhill, Programmer
 public class Inventory 
     {
+    static int numItems = 0;
+    static double avgInvCost = 0;
     static Scanner sc = new Scanner(System.in);
     public static void main(String args[])
         {
@@ -14,6 +16,8 @@ public class Inventory
             {
             // begin code block to display results
             System.out.printf("average cost: $%.2f\n", averageCost());
+            System.out.print("At a level of " + numItems + " units, ");
+            System.out.printf("the inventory tax is : $%.2f\n", computeTax());
             System.out.println("***************************");
             // end code block to display results
             // begin code block to perform additional program run 
@@ -57,11 +61,19 @@ public class Inventory
             cost = sc.nextDouble();
             totValue += cost * quantity;
             }
+        numItems = sumItems;
+        avgInvCost = totValue / sumItems;
         // outside the for() loop
         average = totValue / sumItems;
         // end code block for inventory evaluation
         return average;
     }//end method
+    static double computeTax() 
+        {
+        double tax = 0;
+        tax = avgInvCost * .06;
+        return tax;
+        }//end method
 }// end class
 
 
