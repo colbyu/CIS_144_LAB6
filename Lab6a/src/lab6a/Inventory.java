@@ -9,11 +9,16 @@ import java.util.Scanner;
 public class Inventory 
     {
     static Scanner sc = new Scanner(System.in);
+    static Calc calculator = new Calc();
     public static void main(String args[])
         {
-            int sumItems = 0;
-            Calc calculator = new Calc();
-            
+            char answer = 'Y';
+            //DisplayMenu();
+            while(answer == 'Y' || answer == 'y') 
+            {
+            int number = 0;
+            String item = "";
+            // begin code block for inventory evaluation
             System.out.println("number of item types in the inventory ->");
             calculator.setNumber(sc.nextInt());
             System.out.println("items " + calculator.getNumber());
@@ -29,7 +34,7 @@ public class Inventory
             System.out.println("cost " + calculator.getCost());
             
             System.out.println("totvalue " + calculator.getTotValue());
-        
+            }
             // begin code block to display results
             System.out.printf("average cost: $%.2f\n", calculator.computeAverage());
             
