@@ -8,29 +8,37 @@ import java.util.Scanner;
 //Colby Underhill, Programmer
 public class Inventory 
     {
-    static int numItems = 0;
-    static double avgInvCost = 0;
     static Scanner sc = new Scanner(System.in);
     public static void main(String args[])
         {
-        Calc calculator = new Calc();
-        calculator.setNumItems(1);
-        System.out.println(calculator.getNumItems());
-        calculator.setAvgInvCost(2);
-        System.out.println(calculator.getAvgInvCost());
-        calculator.setAverage(3);
-        System.out.println(calculator.getAverage());
-        calculator.setCost(4);
-        System.out.println(calculator.getCost());
-        calculator.setTotValue(5);
-        System.out.println(calculator.getTotValue());
-        calculator.setNumber(6);
-        System.out.println(calculator.getNumber());
-        calculator.setSumItems(7);
-        System.out.println(calculator.getSumItems());
-        calculator.setQuantity(8);
-        System.out.println(calculator.getQuantity());
-        System.out.println(calculator.computeTax());
-}// end class
-}
+            int sumItems = 0;
+            Calc calculator = new Calc();
+            
+            System.out.println("number of item types in the inventory ->");
+            calculator.setNumber(sc.nextInt());
+            System.out.println("items " + calculator.getNumber());
 
+            System.out.println("enter item quantity");
+            calculator.setQuantity(sc.nextInt());
+            System.out.println("quantity " + calculator.getQuantity());
+
+            System.out.println("sumitems " + calculator.getSumItems());
+            
+            System.out.println("enter item cost");
+            calculator.setCost(sc.nextDouble());
+            System.out.println("cost " + calculator.getCost());
+            
+            System.out.println("totvalue " + calculator.getTotValue());
+        
+            // begin code block to display results
+            System.out.printf("average cost: $%.2f\n", calculator.computeAverage());
+            
+            System.out.print("At a level of " + calculator.getTotItems() + " units, ");
+            
+            System.out.printf("the inventory tax is : $%.2f\n", calculator.computeInvTax());
+            System.out.println("***************************");
+            // end code block to display results
+            // begin code block to perform additional program run 
+
+        }
+}

@@ -13,8 +13,10 @@ public class Calc {
     private double avgInvCost = 0;
     private int numItems = 0;
     
-    private double average = 0.0, cost = 0.0, totValue = 0.0;
-    private int number = 0, sumItems = 0, quantity = 0;
+    private double average = 0.0, cost = 0.0, totValue = 0.0, invTax = 0.0;
+    private int number = 0, sumItems = 0, quantity = 0, totItems = 0;
+    
+    private final double tax = .06;
     
     //set up variables to share with main:
     public int getNumItems()
@@ -59,6 +61,7 @@ public class Calc {
     
      public double getTotValue()
     {
+        totValue += cost * quantity;
         return totValue;
     }
     
@@ -79,6 +82,7 @@ public class Calc {
     
     public int getSumItems()
     {
+        sumItems += quantity;
         return sumItems;
     }
     
@@ -96,18 +100,29 @@ public class Calc {
     {
         quantity = quant;
     }
-    // below, we use these variables to perform our calculations
-    public double computeTax()
+    public int getTotItems()
     {
-        double tax = 0;
-       tax = avgInvCost * .06;
-        return tax;
+        totItems = number * quantity;
+        return totItems;
     }
     
-    //public double computeTax()
-    //{
-     //   double tax = 0;
-      // tax = avgInvCost * .06;
-       // return tax;
-    //}
+    public void setTotItems(int itemTot)
+    {
+        totItems = itemTot;
+    }
+    // below, we use these variables to perform our calculations
+    
+    public double computeAverage()
+    {
+    average = totValue / sumItems;
+    return average;
+    }
+    
+    public double computeInvTax()
+    {
+       invTax = computeAverage() * tax;
+        return invTax;
+    }
+    
+
 }
