@@ -15,11 +15,26 @@ public class Inventory
         String item = "";
         // end local variable declaration / initialization zone
         menu.getMenu();
+        //averageCost();
         while(answer == 'Y' || answer == 'y') 
             {
+                 System.out.println("number of item types in the inventory ->");
+                 calculator.setNumber(sc.nextInt());
+                 //for(int i = 1; i <= number; i++)
+                 //{
+                System.out.println("enter the item's description");
+                item = sc.next();
+                System.out.println("item description: " + item);
+                System.out.println("enter item quantity");
+                calculator.setQuantity(sc.nextInt());
+                //sumItems += quantity;
+                System.out.println("enter item cost");
+                calculator.setCost(sc.nextDouble());
+                //totValue += cost * quantity;
+               /// }
             // begin code block to display results
             System.out.printf("average cost: $%.2f\n", calculator.computeAverage());
-            System.out.print("At a level of " + calculator.getTotItems() + " units, ");
+            System.out.print("At a level of " + calculator.getNumber()*calculator.getQuantity() + " units, ");
             System.out.printf("the inventory tax is : $%.2f\n", calculator.computeInvTax());
             System.out.println("***************************");
             // end code block to display results
@@ -29,19 +44,5 @@ public class Inventory
             // end code block to perform additional program run 
             }
         System.out.println("***************************");
-        // begin code block for inventory evaluation
-        System.out.println("number of item types in the inventory ->");
-        calculator.setNumber(sc.nextInt());
-        for(int i = 1; i <= number; i++)
-            {
-            System.out.println("enter the item's description");
-            item = sc.next();
-            System.out.println("item description: " + item);
-            System.out.println("enter item quantity");
-            calculator.setQuantity(sc.nextInt());
-            calculator.setSumItems(3);
-            System.out.println("enter item cost");
-            calculator.setCost(sc.nextDouble());
-            }
-        }
-    }
+    }// end main() method
+

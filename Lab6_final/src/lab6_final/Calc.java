@@ -110,8 +110,7 @@ public class Calc {
     
     public double computeAverage()
     {
-    average = totValue / sumItems;
-    return average;
+    return (number * quantity) / cost;
     }
     
     public double computeInvTax()
