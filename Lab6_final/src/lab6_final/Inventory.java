@@ -11,7 +11,7 @@ public class Inventory
         {
         // begin local variable declaration / initialization zone
         char answer = 'Y';
-        int number = 0;
+        int number = 1;
         String item = "";
         // end local variable declaration / initialization zone
         menu.getMenu();
@@ -20,8 +20,8 @@ public class Inventory
             {
             System.out.println("number of item types in the inventory ->");
             calculator.setNumber(sc.nextInt());
-            //for(int i = 1; i <= number; i++)
-            //{
+            for(int i = 1; i <= number; i++)
+            {
             System.out.println("enter the item's description");
             item = sc.next();
             System.out.println("item description: " + item);
@@ -29,7 +29,7 @@ public class Inventory
             calculator.setQuantity(sc.nextInt());
             System.out.println("enter item cost");
             calculator.setCost(sc.nextDouble());
-            //}
+            }
         // begin code block to display results
         System.out.printf("average cost: $%.2f\n", calculator.computeAverage());
         System.out.print("At a level of " + calculator.getNumber()*calculator.getQuantity() + " units, ");
