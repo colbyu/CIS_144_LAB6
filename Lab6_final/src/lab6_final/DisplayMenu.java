@@ -1,10 +1,6 @@
 
 package lab6_final;
 
-/**
- *
- * @author colby
- */
 public class DisplayMenu {
     public void getMenu()
     {
@@ -19,6 +15,5 @@ public class DisplayMenu {
         System.out.println("--------- M E N U ---------");
         System.out.println("");
         // end program menu
-
     }
 }

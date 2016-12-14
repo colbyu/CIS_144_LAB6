@@ -116,7 +116,7 @@ public class Calc {
     public double computeInvTax()
     {
        invTax = computeAverage() * tax;
-        return invTax;
+       return invTax;
     }
     
 
